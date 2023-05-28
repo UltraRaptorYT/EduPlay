@@ -22,12 +22,12 @@
   <body>
     <a-scene
       id="mytarget"
-      gesture-detector
       mindar-image="imageTargetSrc: ./src/targets.mind;showStats: false;"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
+      gesture-detector
     >
       <a-assets>
         <a-asset-item
@@ -45,15 +45,13 @@
       <a-entity
         mindar-image-target="targetIndex: 0"
         raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-gltf-model
+        <a-entity
           class="clickable"
           rotation="0 0 0"
           position="0 0 0.5"
           scale="12.5 12.5 12.5"
-          src="#heartModel"
+          gltf-model="#heartModel"
           animation-mixer
           gesture-handler
         >
