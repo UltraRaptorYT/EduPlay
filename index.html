@@ -6,7 +6,10 @@
     <title>EduPlay</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"
+      defer
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <style>
       #arjsDebugUIContainer {
@@ -20,16 +23,37 @@
   <body>
     <a-scene
       id="mytarget"
-      mindar-image="imageTargetSrc: ./src/targets.mind;showStats: false;"
+      mindar-image="imageTargetSrc: ./src/6-photos.mind;showStats: false;"
       color-space="sRGB"
       renderer="colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
+      gesture-detector
     >
       <a-assets>
         <a-asset-item
           id="heartModel"
-          src="./beating-heart/scene.gltf"
+          src="./src/1-beating-heart/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="periodicTable"
+          src="./src/2-the_3d_periodic_table/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="sodiumModel"
+          src="./src/3-sodium/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="lithiumModel"
+          src="./src/4-lithium/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="cradleModel"
+          src="./src/5-newtons_cradle/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="bunsenModel"
+          src="./src/6-bunsen_burner/scene.gltf"
         ></a-asset-item>
       </a-assets>
 
@@ -50,7 +74,83 @@
           scale="12.5 12.5 12.5"
           gltf-model="#heartModel"
           animation-mixer
+          gesture-handler
         >
+        </a-entity>
+      </a-entity>
+      <a-entity
+        mindar-image-target="targetIndex: 1"
+        raycaster="objects: .clickable"
+      >
+        <a-entity
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="1 1 1"
+          gltf-model="#periodicTable"
+          animation-mixer
+        >
+        </a-entity>
+      </a-entity>
+      <a-entity
+        mindar-image-target="targetIndex: 2"
+        raycaster="objects: .clickable"
+      >
+        <a-entity
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="0.03 0.03 0.03"
+          gltf-model="#sodiumModel"
+          animation-mixer
+          gesture-handler
+        >
+        </a-entity>
+      </a-entity>
+      <a-entity
+        mindar-image-target="targetIndex: 3"
+        raycaster="objects: .clickable"
+      >
+        <a-entity
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="0.03 0.03 0.03"
+          gltf-model="#lithiumModel"
+          animation-mixer
+          gesture-handler
+        >
+        </a-entity>
+      </a-entity>
+      <a-entity
+        mindar-image-target="targetIndex: 4"
+        raycaster="objects: .clickable"
+      >
+        <a-entity
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="0.3 0.3 0.3"
+          gltf-model="#cradleModel"
+          animation-mixer
+          gesture-handler
+        >
+        </a-entity>
+      </a-entity>
+      <a-entity
+        mindar-image-target="targetIndex: 5"
+        raycaster="objects: .clickable"
+      >
+        <a-entity
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="0.01 0.01 0.01"
+          gltf-model="#bunsenModel"
+          animation-mixer
+          gesture-handler
+        >
+        </a-entity>
       </a-entity>
     </a-scene>
     <script>
