@@ -10,10 +10,6 @@
       src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"
       defer
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.loaders.min.js"
-      defer
-    ></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <style>
       #arjsDebugUIContainer {
@@ -29,7 +25,6 @@
     <!-- mindar-image="imageTargetSrc: ./src/6-photos.mind;showStats: false;" -->
     <a-scene
       arjs
-      id="mytarget"
       mindar-image="imageTargetSrc: ./src/6-photos.mind;showStats: false;"
       color-space="sRGB"
       renderer="logarithmicDepthBuffer: true;colorManagement: true, physicallyCorrectLights"
@@ -66,6 +61,14 @@
           id="NaCl"
           src="./src/sodium_chloride/scene.gltf"
         ></a-asset-item>
+        <a-asset-item
+          id="heliumModel"
+          src="./src/helium/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="carbonModel"
+          src="./src/carbon/scene.gltf"
+        ></a-asset-item>
       </a-assets>
 
       <a-camera
@@ -75,6 +78,7 @@
         raycaster="far: 10000; objects: .clickable"
       ></a-camera>
       <a-entity
+        mytarget
         mindar-image-target="targetIndex: 0"
         smooth="true"
         smoothCount="10"
@@ -95,6 +99,7 @@
         ></a-entity>
       </a-entity>
       <a-entity
+        mytarget
         mindar-image-target="targetIndex: 1"
         smooth="true"
         smoothCount="10"
@@ -115,6 +120,7 @@
         ></a-entity>
       </a-entity>
       <a-entity
+        mytarget
         mindar-image-target="targetIndex: 2"
         smooth="true"
         smoothCount="10"
@@ -135,6 +141,7 @@
         ></a-entity>
       </a-entity>
       <a-entity
+        mytarget
         mindar-image-target="targetIndex: 3"
         smooth="true"
         smoothCount="10"
@@ -155,6 +162,7 @@
         ></a-entity>
       </a-entity>
       <a-entity
+        mytarget
         mindar-image-target="targetIndex: 4"
         smooth="true"
         smoothCount="10"
@@ -175,6 +183,7 @@
         ></a-entity>
       </a-entity>
       <a-entity
+        mytarget
         mindar-image-target="targetIndex: 5"
         smooth="true"
         smoothCount="10"
@@ -195,6 +204,7 @@
         ></a-entity>
       </a-entity>
       <a-entity
+        mytarget
         mindar-image-target="targetIndex: 6"
         smooth="true"
         smoothCount="10"
@@ -209,11 +219,48 @@
           id="animated-model"
           class="clickable"
           rotation="0 180 0"
-          position="0 0 0.5"
-          scale="0.45 0.45 0.45"
+          position="0 0 -0.5"
+          scale="0.75 0.75 0.75"
           gltf-model="#periodicTable"
           animation-mixer
           click-handler
+        ></a-entity>
+        <a-entity
+          id="helium"
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="0.03 0.03 0.03"
+          gltf-model="#heliumModel"
+          animation-mixer
+          click-handler
+          gesture-handler
+          visible="false"
+        >
+        </a-entity>
+        <a-entity
+          id="carbon"
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="0.03 0.03 0.03"
+          gltf-model="#carbonModel"
+          animation-mixer
+          click-handler
+          gesture-handler
+          visible="false"
+        ></a-entity>
+        <a-entity
+          id="lithium"
+          class="clickable"
+          rotation="0 0 0"
+          position="0 0 0.5"
+          scale="0.03 0.03 0.03"
+          gltf-model="#lithiumModel"
+          animation-mixer
+          click-handler
+          gesture-handler
+          visible="false"
         ></a-entity>
       </a-entity>
     </a-scene>
@@ -222,22 +269,12 @@
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
             console.log("target found");
-            showInfo();
           });
           this.el.addEventListener("targetLost", (event) => {
             console.log("target found");
           });
           //this.el.emit('targetFound');
         },
-      });
-      let sceneEl = document.getElementById("mytarget");
-
-      sceneEl.addEventListener("markerFound", (e) => {
-        isMarkerVisible = true;
-      });
-
-      sceneEl.addEventListener("markerLost", (e) => {
-        isMarkerVisible = false;
       });
     </script>
   </body>
