@@ -146,7 +146,7 @@ with st.expander(f"🎨 Drawing AI",):
         </button>
         </div>
         """
-        , height=500, )
+        , height=350, )
 
     PATH = os.path.dirname(os.path.abspath(__file__))
     PRESENTATION_FOLDER = os.path.join(PATH, "Presentation")
@@ -275,7 +275,12 @@ with st.expander(f"🎨 Drawing AI",):
         annotations = [[]]
         annotationNumber = -1
         annotationStart = False
-        hs, ws = int(50 * 2), int(80 * 1.75)  # width and height of small image
+
+        # width and height of small image
+        aspect_ratio = 1920 / 1080
+        ws = 120
+        hs = int(ws / aspect_ratio)
+        
 
         #Dev Mode:  if Test = true, skip all image pro
 
@@ -336,8 +341,8 @@ with st.expander(f"🎨 Drawing AI",):
 
                     # Constrain values for easier drawing
                     # Constrain values for easier drawing
-                    xVal = int(np.interp(lmList[8][0], [width // 2, width], [0, width + 250]))
-                    yVal = int(np.interp(lmList[8][1], [100, height - 100], [0, height + 250]))
+                    xVal = int(np.interp(lmList[8][0], [width // 2, width], [0, width]))
+                    yVal = int(np.interp(lmList[8][1], [150, height - 150], [0, height]))
                     indexFinger = xVal, yVal
 
 
@@ -392,7 +397,7 @@ with st.expander(f"🎨 Drawing AI",):
                 for i, annotation in enumerate(annotations):
                     for j in range(len(annotation)):
                         if j != 0:
-                            cv2.line(imgCurrent, annotation[j - 1], annotation[j], (0, 0, 200), 12)
+                            cv2.line(imgCurrent, annotation[j - 1], annotation[j], (0, 0, 200), 4)
 
                 imgSmall = cv2.resize(img, (ws, hs))
                 h, w, _ = imgCurrent.shape
