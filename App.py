@@ -149,7 +149,7 @@ with st.expander(f"🎨 Drawing AI",):
     PRESENTATION_FOLDER = os.path.join(PATH, "Presentation")
     IMAGES_FOLDER = os.path.join(PATH, "Images")
 
-    st.title("Live Update")
+    st.title("Live Updates")
     previous_val = ""
     text_box = st.empty()
     text_box.write(previous_val)
@@ -267,8 +267,8 @@ with st.expander(f"🎨 Drawing AI",):
         imgNumber = 0
         delayCounter = 0
         #2 delays - 1 for slide change, 1 for updating
-        SlideDelay = 12
-        DrawDelay = 16
+        # SlideDelay = 12
+        # DrawDelay = 16
         annotations = [[]]
         annotationNumber = -1
         annotationStart = False
