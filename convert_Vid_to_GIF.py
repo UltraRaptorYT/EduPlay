@@ -2,8 +2,8 @@ import os
 from moviepy.editor import VideoFileClip
 
 def convert_videos_to_gifs(input_folder, output_folder):
-    duration = 10  # Duration in seconds
-    fps = 33  # Frames per second
+    duration = 9  # Duration in seconds
+    fps = 20  # Frames per second
 
     # Create the output folder if it doesn't exist
     if not os.path.exists(output_folder):
