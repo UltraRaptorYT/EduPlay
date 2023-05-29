@@ -122,16 +122,16 @@ with st.expander(f"🎨 Drawing AI",):
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/SlideControl.gif?raw=true" alt="Chicago" class="d-block" style="width:100%">
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/New_GIFs(use_this)/PentaHack_AdobeExpress.gif?raw=true" alt="Chicago" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/pointer.gif?raw=true" alt="Chicago" class="d-block" style="width:100%">
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/New_GIFs(use_this)/PentaHack_AdobeExpress%20(1).gif?raw=true" alt="Chicago" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/draw.gif?raw=true" alt="New York" class="d-block" style="width:100%">
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/New_GIFs(use_this)/PentaHack_AdobeExpress%20(2).gif?raw=true" alt="New York" class="d-block" style="width:100%">
         </div>
             <div class="carousel-item">
-            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/Erase.gif?raw=true" alt="New York" class="d-block" style="width:100%">
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/New_GIFs(use_this)/PentaHack_AdobeExpress%20(3).gif?raw=true" alt="New York" class="d-block" style="width:100%">
         
         </div>
     
