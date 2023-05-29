@@ -260,7 +260,7 @@ with st.expander(f"🎨 Drawing AI",):
 
         # Variables
         imgList = []
-        delay = 12
+        delay = 11
         buttonPressed = False
         counter = 0
         drawMode = False
