@@ -1,1 +1,8 @@
-ÿþ
+numpy
+opencv-python
+streamlit
+cvzone
+mediapipe
+matplotlib
+cmake
+PyMuPDF
