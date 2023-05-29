@@ -7,7 +7,6 @@ import os
 import os.path
 import numpy as np
 import streamlit as st
-from pdf2image import convert_from_path
 import fitz
 from PIL import Image
 import streamlit.components.v1 as components
@@ -32,18 +31,20 @@ def reset_camera():
 st.markdown("""
 # EduPlay by Cotton Pickers
 
-> A revolutionary application developed for NUS LifeHack 2023 Competition, using revolutionary AI & AR technology to Ignite  Curiousity, Embrace Learning, Unleash Imagination.
+> An Engagement-First application developed for NUS LifeHack 2023 Competition, combining AI & AR technology to Ignite Curiousity, Embrace Learning, Unleash Imagination in students.
 
-## Main Features:
+ 
 
 
 ### ✨📚 *AR Interactive Lessons:*
 - Engaging lessons with visually stimulating content and gamified activities
-- AR technology brings textbooks to life with 360-degree, 3D animations
+- AR technology brings MOE textbooks to life with 360-degree, 3D animations
 
-### 🎨✏️ *AI Drawing Tools:*
-- Express creativity with hand gestures for drawing, slide manipulation, and gaming
-- Cutting-edge computer vision and AI technology revolutionize interaction
+
+### 🎨✏️ *AI Classroom Engagement Tools:*
+- Express creativity with hand gestures for pointing, drawing and slide manipulation
+- Engage students of all ages and learning styles with inbuilt interactive tools
+- Responsive computer vision and AI technology
 
              """)
 url = "https://ultraraptoryt.github.io/EduPlay/"
@@ -63,9 +64,9 @@ def st_capture(output_func):
 
 with st.expander(f"🧾 Play AR",):
     # Instructions
-    st.markdown("### 📰 Digitalizing Education using AR")
+    st.markdown("### 📰😁 Digitalizing Education using AR")
     # We initialize the st_tags component with default "labels"
-    st.info(f'AR textbooks for better learning experience')
+    st.info(f'Scan your textbooks for an interactive learning experience')
     # Start button
     start_button = st.button("Start AR Experience")
     # If start button is pressed
@@ -80,7 +81,7 @@ with st.expander(f"🎨 Drawing AI",):
 
     # Set the target width and height
 
-    st.markdown("<h1 style='text-align: center;'>AI Assistive Tool</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: left;'>🧠💡Engaging Learning Tool with AI</h1>", unsafe_allow_html=True)
 
     #Logging Config
     logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
