@@ -115,27 +115,23 @@ with st.expander(f"🎨 Drawing AI",):
         <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
         <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
         <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
         </div>
 
     <!-- Indicators/dots
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://github.com/rajaselvam2003/intuition9/blob/main/g1.JPG?raw=true" alt="Chicago" class="d-block" style="width:100%">
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/SlideControl.gif?raw=true" alt="Chicago" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="https://github.com/rajaselvam2003/intuition9/blob/main/g2.JPG?raw=true" alt="Chicago" class="d-block" style="width:100%">
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/pointer.gif?raw=true" alt="Chicago" class="d-block" style="width:100%">
         </div>
         <div class="carousel-item">
-            <img src="https://github.com/rajaselvam2003/intuition9/blob/main/g3.JPG?raw=true" alt="New York" class="d-block" style="width:100%">
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/draw.gif?raw=true" alt="New York" class="d-block" style="width:100%">
         </div>
             <div class="carousel-item">
-            <img src="https://github.com/rajaselvam2003/intuition9/blob/main/g4.JPG?raw=true" alt="New York" class="d-block" style="width:100%">
-        </div>
-            <div class="carousel-item">
-            <img src="https://github.com/rajaselvam2003/intuition9/blob/main/g5.JPG?raw=true" alt="New York" class="d-block" style="width:100%">
-        </div>
+            <img src="https://github.com/UltraRaptorYT/EduPlay/blob/main/GIFs/Erase.gif?raw=true" alt="New York" class="d-block" style="width:100%">
+        
         </div>
     
         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
