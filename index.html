@@ -10,6 +10,10 @@
       src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"
       defer
     ></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.loaders.min.js"
+      defer
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
     <style>
       #arjsDebugUIContainer {
@@ -18,14 +22,17 @@
     </style>
     <script src="./src/gesture-detector.js"></script>
     <script src="./src/gesture-handler.js"></script>
+    <script src="./src/click-handler.js"></script>
   </head>
 
   <body>
+    <!-- mindar-image="imageTargetSrc: ./src/6-photos.mind;showStats: false;" -->
     <a-scene
+      arjs
       id="mytarget"
-      mindar-image="imageTargetSrc: ./src/6-photos.mind;showStats: false;"
+      mindar-image="imageTargetSrc: ./src/test.mind;showStats: false;"
       color-space="sRGB"
-      renderer="colorManagement: true, physicallyCorrectLights"
+      renderer="logarithmicDepthBuffer: true;colorManagement: true, physicallyCorrectLights"
       vr-mode-ui="enabled: false"
       device-orientation-permission-ui="enabled: false"
       gesture-detector
@@ -36,8 +43,8 @@
           src="./src/1-beating-heart/scene.gltf"
         ></a-asset-item>
         <a-asset-item
-          id="periodicTable"
-          src="./src/2-the_3d_periodic_table/scene.gltf"
+          id="bunsenModel"
+          src="./src/6-bunsen_burner/scene.gltf"
         ></a-asset-item>
         <a-asset-item
           id="sodiumModel"
@@ -52,8 +59,12 @@
           src="./src/5-newtons_cradle/scene.gltf"
         ></a-asset-item>
         <a-asset-item
-          id="bunsenModel"
-          src="./src/6-bunsen_burner/scene.gltf"
+          id="periodicTable"
+          src="./src/2-the_3d_periodic_table/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="NaCl"
+          src="./src/sodium_chloride/scene.gltf"
         ></a-asset-item>
       </a-assets>
 
@@ -65,9 +76,15 @@
       ></a-camera>
       <a-entity
         mindar-image-target="targetIndex: 0"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
         raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-gltf-model
+        <a-entity
           class="clickable"
           rotation="0 0 0"
           position="0 0 0.5"
@@ -75,26 +92,39 @@
           gltf-model="#heartModel"
           animation-mixer
           gesture-handler
-        >
-      </a-gltf-model>
+        ></a-entity>
+      </a-entity>
       <a-entity
         mindar-image-target="targetIndex: 1"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
         raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-gltf-model
+        <a-entity
           class="clickable"
           rotation="0 0 0"
-          position="0 0 0.5"
-          scale="1 1 1"
-          gltf-model="#periodicTable"
+          position="0 -0.5 0"
+          scale="0.005 0.005 0.005"
+          gltf-model="#bunsenModel"
           animation-mixer
-        >
-      </a-gltf-model>
+          gesture-handler
+        ></a-entity>
+      </a-entity>
       <a-entity
         mindar-image-target="targetIndex: 2"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
         raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-gltf-model
+        <a-entity
           class="clickable"
           rotation="0 0 0"
           position="0 0 0.5"
@@ -102,13 +132,19 @@
           gltf-model="#sodiumModel"
           animation-mixer
           gesture-handler
-        >
-      </a-gltf-model>
+        ></a-entity>
+      </a-entity>
       <a-entity
         mindar-image-target="targetIndex: 3"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
         raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-gltf-model
+        <a-entity
           class="clickable"
           rotation="0 0 0"
           position="0 0 0.5"
@@ -116,13 +152,19 @@
           gltf-model="#lithiumModel"
           animation-mixer
           gesture-handler
-        >
-      </a-gltf-model>
+        ></a-entity>
+      </a-entity>
       <a-entity
         mindar-image-target="targetIndex: 4"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
         raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-gltf-model
+        <a-entity
           class="clickable"
           rotation="0 0 0"
           position="0 0 0.5"
@@ -130,22 +172,50 @@
           gltf-model="#cradleModel"
           animation-mixer
           gesture-handler
-        >
-      </a-gltf-model>
+        ></a-entity>
+      </a-entity>
       <a-entity
         mindar-image-target="targetIndex: 5"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
         raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
       >
-        <a-gltf-model
+        <a-entity
           class="clickable"
           rotation="0 0 0"
-          position="0 0 0.5"
-          scale="0.01 0.01 0.01"
-          gltf-model="#bunsenModel"
+          position="0 0 0"
+          scale="0.1 0.1 0.1"
+          gltf-model="#NaCl"
           animation-mixer
           gesture-handler
-        >
-      </a-gltf-model>
+        ></a-entity>
+      </a-entity>
+      <a-entity
+        mindar-image-target="targetIndex: 6"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance=".01"
+        smoothThreshold="5"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="animated-marker"
+      >
+        <a-entity
+          id="animated-model"
+          class="clickable"
+          rotation="0 180 0"
+          position="0 0 0.5"
+          scale="1.5 1.5 1.5"
+          gltf-model="#periodicTable"
+          animation-mixer
+          click-handler
+        ></a-entity>
+      </a-entity>
     </a-scene>
     <script>
       AFRAME.registerComponent("mytarget", {
@@ -159,6 +229,15 @@
           });
           //this.el.emit('targetFound');
         },
+      });
+      let sceneEl = document.getElementById("mytarget");
+
+      sceneEl.addEventListener("markerFound", (e) => {
+        isMarkerVisible = true;
+      });
+
+      sceneEl.addEventListener("markerLost", (e) => {
+        isMarkerVisible = false;
       });
     </script>
   </body>
